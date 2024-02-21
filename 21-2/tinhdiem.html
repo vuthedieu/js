@@ -31,8 +31,8 @@
         let h = +document.getElementById("h").value;
         let kv = +document.getElementById("kv").value;
         if (t <= 10 && l <= 10 && h <= 10 && t >= 0 && l >= 0 && h >= 0) {
-          diem = (t + l + h) / 3 + kv;
-          document.getElementById("d").innerHTML = `Diem cua can ho la ${diem}`;
+          diem = t + l + h3 + kv;
+          document.getElementById("d").innerHTML = `Diem cua ban la ${diem}`;
         } else {
           document.getElementById("d").innerHTML = "thang khong ton tai";
         }
