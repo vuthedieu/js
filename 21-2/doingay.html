@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <input type="" id="1" />
+  <body>
+    <input type="" id="m" />
     <button onclick="doingay()">tinh so ngay</button>
-    <p id="p"></p>
+    <p id="d"></p>
     <script>
-        function doingay() {
-            let a = document.getElementById("1").value;
-            if (
-                a == 1 ||
-                a == 3 ||
-                a == 5 ||
-                a == 7 ||
-                a == 8 ||
-                a == 10 ||
-                a == 12
-            ) {
-                document.getElementById("p").innerHTML = "thang" + a + "co 30 ngay";
-            }
-        }
-        if (a == 2) {
-            document.getElementById("p").innerHTML =
-                "thang" + a + "co 28 hoac 29 ngay";
-        }
-        if (a == 4 || a == 6 || a == 9 || a == 11) {
-            document.getElementById("p").innerHTML = "thang" + a + "co 30 ngay";
-        }
+      function doingay() {
+          let month = +document.getElementById("m").value;
+          let days = -1;
+          if (
+              month == 1 ||
+              month == 3 ||
+              month == 5 ||
+              month == 7 ||
+              month == 8 ||
+              month == 10 ||
+              month == 12
+          ) {
+              days = 31;
+          }
+          if (month == 4 || month == 6 || month == 9 || month == 11) {
+              days = 30;
+          }
+          if (month == 2) {
+              days = "28 hoặc 29";
+          }
+          if (days == -1) {
+              document.getElementById("d").innerHTML = 'thang khong ton tai';
+          } else {
+              document.getElementById("d").innerHTML =
+                  "Tháng " + month + " có " + days + " ngày!";
+          }
     </script>
-</body>
-
+  </body>
 </html>
