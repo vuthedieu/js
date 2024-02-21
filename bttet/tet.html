@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    6.in ra the h1 img a
+    <h1>vu the dieu</h1>
+    <img src="../bttet/tải xuống.jpg" alt="" />
+    <a href="https://www.youtube.com/">youtube</a>
+    <h1 id="ten"></h1>
+
+    <script>
+      //   7. nhap vao ten tin ra ten
+      var ten = prompt("nhap vao ten cua ban: ");
+      document.write(`ten cua ban la ${ten}`);
+
+      //   8. nhap a in ra binh phuong cua a
+      var a = +prompt("nhap vao a");
+      alert(a * a);
+      //   9. nhap vao ten in ra ten voi h1
+      var ten = prompt("nhap vao ten cua ban: ");
+      document.getElementById("ten").innerHTML = ten;
+      //   10. nhap vao duong dan in ra anh la bien src
+      var a = prompt("Nhap vao duong dan hinh anh");
+      document.write('<img src ="' + a + '" alt=""/>');
+
+      //   11. tam giac
+      var a = +prompt("nhap a ");
+      var b = +prompt("nhap b ");
+      var c = +prompt("nhap c ");
+      if (a + b > c && a && c > b && b + c > a) {
+        alert("a b c la canh tam giác");
+      } else {
+        alert("a b c k la canh tam giác");
+      }
+      //   12. nhap a b tinh tong a den b
+      var a = +prompt("nhap a ");
+      var b = +prompt("nhap b ");
+      var d = 0;
+
+      for (var i = a; i <= b; i++) {
+        d += i;
+      }
+      alert(d);
+      //   13. giai phuong trinh bac nhat
+      var a = +prompt("nhap a ");
+      var b = +prompt("nhap b ");
+      alert("nghiem la x" + -b / a);
+      //   14. tien gui xe
+      var a = +prompt("thoi gian gui xe");
+      var d;
+      if (a < 2) {
+        d = a * 3;
+      }
+      if (a >= 2 && a < 5) {
+        d = a * 5;
+      }
+      if (a >= 5) {
+        d = a * 7;
+      }
+      alert("phai thanh toan " + d);
+
+      //   15. tien dien
+      var a = +prompt("nhap so dien");
+      var d;
+      if (a >= 1 && a <= 99) {
+        d = 1800 * a;
+      }
+      if (a >= 100 && a <= 199) {
+        d = 2000 * a;
+      }
+      if (a >= 200) {
+        d = 2200 * a;
+      }
+      alert("phai thanh toan " + d);
+    </script>
+  </body>
+</html>

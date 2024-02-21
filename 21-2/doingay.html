@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="" id="1" />
+    <button onclick="doingay()">tinh so ngay</button>
+    <p id="p"></p>
+    <script>
+        function doingay() {
+            let a = document.getElementById("1").value;
+            if (
+                a == 1 ||
+                a == 3 ||
+                a == 5 ||
+                a == 7 ||
+                a == 8 ||
+                a == 10 ||
+                a == 12
+            ) {
+                document.getElementById("p").innerHTML = "thang" + a + "co 30 ngay";
+            }
+        }
+        if (a == 2) {
+            document.getElementById("p").innerHTML =
+                "thang" + a + "co 28 hoac 29 ngay";
+        }
+        if (a == 4 || a == 6 || a == 9 || a == 11) {
+            document.getElementById("p").innerHTML = "thang" + a + "co 30 ngay";
+        }
+    </script>
+</body>
+
+</html>

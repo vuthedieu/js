@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" name="" id="s1" />
+    <input type="text" name="" id="s2" />
+    <button type="button" onclick="tong()">tong</button>
+    <button type="button" onclick="chia()">chia</button>
+    <button type="button" onclick="tru()">tru</button>
+    <button type="button" onclick="nhan()">nhan</button>
+
+    <h1 id="kqtong"></h1>
+    <h1 id="kqchia"></h1>
+    <h1 id="kqtru"></h1>
+    <h1 id="kqnhan"></h1>
+
+    <script>
+      function tong() {
+        let s1 = document.getElementById("s1").value;
+        let s2 = document.getElementById("s2").value;
+        let tong = Number(s1) + Number(s2);
+
+        document.getElementById("kqtong").innerHTML = "tong la: " + tong;
+      }
+
+      function chia() {
+        let s1 = document.getElementById("s1").value;
+        let s2 = document.getElementById("s2").value;
+
+        let chia = Number(s1) / Number(s2);
+
+        document.getElementById("kqtong").innerHTML = "thuong la: " + chia;
+      }
+
+      function tru() {
+        let s1 = document.getElementById("s1").value;
+        let s2 = document.getElementById("s2").value;
+
+        let tru = Number(s1) - Number(s2);
+
+        document.getElementById("kqtong").innerHTML = "hieu la: " + tru;
+      }
+
+      function nhan() {
+        let s1 = document.getElementById("s1").value;
+        let s2 = document.getElementById("s2").value;
+
+        let nhan = Number(s1) * Number(s2);
+
+        document.getElementById("kqtong").innerHTML = "tich la: " + nhan;
+      }
+    </script>
+  </body>
+</html>
