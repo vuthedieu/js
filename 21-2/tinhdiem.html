@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1></h1>
+    <input type="text" id="t" />
+    <input type="text" id="l" />
+    <input type="text" id="h" />
+    <select
+      name="
+      "
+      id="kv"
+    >
+      <option value="0.75">kv1</option>
+      <option value="0.5">kv2-nt</option>
+      <option value="0.25">kv2</option>
+      <option value="0.25">kv3</option>
+    </select>
+    <button onclick="tinhdiem()">tinh diem</button>
+    <p id="d"></p>
+    <script>
+      function tinhdiem() {
+        let diem;
+        let t = +document.getElementById("t").value;
+        let l = +document.getElementById("l").value;
+        let h = +document.getElementById("h").value;
+        let kv = +document.getElementById("kv").value;
+        if (t <= 10 && l <= 10 && h <= 10 && t >= 0 && l >= 0 && h >= 0) {
+          diem = (t + l + h) / 3 + kv;
+          document.getElementById("d").innerHTML = `Diem cua can ho la ${diem}`;
+        } else {
+          document.getElementById("d").innerHTML = "thang khong ton tai";
+        }
+      }
+    </script>
+  </body>
+</html>
