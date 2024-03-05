@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      let a = +prompt("nhap a");
+      let b = prompt("Nhap b");
+      let d = 1;
+
+      let dem = 0;
+      let q = 0;
+      for (i = a; i <= b; i++) {
+        if (i % 2 == 0) {
+          d = d * i;
+        }
+      }
+      document.write("tich so chan" + d);
+      for (i = a; i <= b; i++) {
+        if (i % 3 == 0 && i > 2) {
+          q = q + i;
+        }
+      }
+      document.write("tong so chia het cho 3 lon hon 2" + q);
+      for (i = a; i <= b; i++) {
+        if (i % 3 == 0) {
+          dem += 1;
+        }
+      }
+      document.write("so so chia het cho 3 " + dem);
+    </script>
+  </body>
+</html>

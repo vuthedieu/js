@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      for (var i = 1; i <= 100; i++) {
+        if (i % 3 == 0 && i % 5 != 0) {
+          // nếu i chia hết cho 3
+          document.write("Fizz");
+        }
+
+        if (i % 5 == 0 && i % 3 != 0) {
+          // nếu i chia hết cho 5
+          document.write("Buzz"); // thì in Buzz
+        }
+        if (i % 3 == 0 && i % 5 == 0) {
+          document.write("FizzBuzz"); //
+        }
+
+        if (i % 3 != 0 && i % 5 != 0) {
+          // nếu không chia hết cho cả 3 và 5
+          document.write(i); // thì in giá trị của i
+        }
+      }
+    </script>
+  </body>
+</html>
