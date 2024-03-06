@@ -6,11 +6,15 @@
     <title>Document</title>
   </head>
   <script>
-    let R = +prompt("nhap vao R");
-    let s = 3.14 * R * R;
-    alert("dien tich la" + s);
-    let c = 3.14 * R * 2;
-    alert("chu vi la" + c);
+    let a = +prompt("nhap so tien gui");
+    let b = +prompt("nhap so nam gui");
+    let c = +prompt("nhap lai ");
+    let d = a + (a * c * b) / 100;
+    if (a <= 0 && b <= 0 && c <= 0) {
+      alert("khong hop le");
+    } else {
+      document.write("tien gui sau" + b + "nam" + d);
+    }
   </script>
 
   <body></body>
