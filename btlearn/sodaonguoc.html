@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function reverseNumber(number) {
+        // Chuyển số thành chuỗi để có thể sử dụng các phương thức chuỗi
+        var numberString = number.toString();
+
+        // Sử dụng phương thức split() để chuyển chuỗi thành một mảng các ký tự,
+        // sau đó sử dụng phương thức reverse() để đảo ngược mảng,
+        // và cuối cùng sử dụng phương thức join() để chuyển mảng đảo ngược thành một chuỗi
+        var reversedNumberString = numberString.split("").reverse().join("");
+
+        // Chuyển chuỗi đã đảo ngược trở lại thành một số
+        var reversedNumber = parseInt(reversedNumberString);
+
+        // Trả về số đã đảo ngược
+        return reversedNumber;
+      }
+
+      var number = 12345; // Số cần đảo ngược
+      var reversedNumber = reverseNumber(number);
+      console.log("Số đảo ngược của " + number + " là: " + reversedNumber);
+    </script>
+  </body>
+</html>
