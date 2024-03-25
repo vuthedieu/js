@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guessing Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      #maxNumberInput {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Hãy thử đoán xem!</h2>
+
+    <label for="maxNumberInput"
+      >Nhập vào số lớn nhất trong khoảng bạn muốn đoán:</label
+    >
+    <input type="number" id="maxNumberInput" />
+
+    <button onclick="startGame()">Chơi</button>
+
+    <script>
+      function startGame() {
+        var maxNumber = parseInt(
+          document.getElementById("maxNumberInput").value
+        );
+
+        if (isNaN(maxNumber) || maxNumber <= 0) {
+          alert("Vui lòng nhập một số nguyên dương lớn hơn 0!");
+          return;
+        }
+
+        var randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+
+        var guess = prompt("Đoán số trong khoảng từ 1 đến " + maxNumber + ":");
+
+        if (guess === null) {
+          return;
+        }
+
+        guess = parseInt(guess);
+
+        if (isNaN(guess)) {
+          alert("Vui lòng nhập một số nguyên!");
+          return;
+        }
+
+        if (guess === randomNumber) {
+          alert("Chúc mừng! Bạn đã đoán đúng!");
+        } else if (guess < randomNumber) {
+          alert("Số bạn đoán nhỏ hơn số cần đoán. Hãy thử lại!");
+          startGame();
+        } else {
+          alert("Số bạn đoán lớn hơn số cần đoán. Hãy thử lại!");
+          startGame();
+        }
+      }
+    </script>
+  </body>
+</html>
