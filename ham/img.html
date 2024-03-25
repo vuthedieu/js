@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <img
+      id="x"
+      src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/mot-chiec-hinh-nen-vua-dang-yeu-vua-huyen-ao-cho-ban-nu.jpg"
+      alt=""
+      style="position: absolute; width: 100px; top: 100px; left: 200px"
+    />
+    <button onclick="phai()">sang phai</button>
+    <button onclick="trai()">trai</button>
+    <button onclick="duoi()">duoi</button>
+    <button onclick="tren()">tren</button>
+    <script>
+      function phai() {
+        let xx = document.getElementById("x");
+        xx.style.left = parseInt(xx.style.left) + 20 + "px";
+      }
+
+      function trai() {
+        let xx = document.getElementById("x");
+        xx.style.left = parseInt(xx.style.left) - 20 + "px";
+      }
+
+      function duoi() {
+        let xx = document.getElementById("x");
+        xx.style.top = parseInt(xx.style.top) + 20 + "px";
+      }
+
+      function tren() {
+        let xx = document.getElementById("x");
+        xx.style.top = parseInt(xx.style.top) - 20 + "px";
+      }
+      window.addEventListener("keydown", (e) => {
+        if (e.keyCode == "38") {
+          trai();
+        }
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.key == "d") {
+          phai();
+        }
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.key == "s") {
+          duoi();
+        }
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.key == "w") {
+          tren();
+        }
+      });
+    </script>
+  </body>
+</html>

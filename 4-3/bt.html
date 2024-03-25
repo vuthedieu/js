@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // bai 1
+      //   for (let i = 0; i <= 20; i++) {
+      //     let a = i * 1;
+      //     for (let x = 0; x <= 10; x++) {
+      //       let b = x * 2;
+      //       for (let y = 0; y <= 4; y++) {
+      //       let c = y * 5;
+      //         if (a + b + c == 20) {
+      //           document.write(i + "," + x + "," + y + "<br>");
+      //         }
+      //       }
+      //     }
+      //   }
+      //bai 2
+      //   let a = +prompt("nhap a");
+      //   let b = +prompt("nhap b");
+      //   let c = +prompt("nhap c");
+
+      let s = +prompt("nhap so tien");
+      for (let s5 = 0; s5 * 5 <= s; s5++) {
+        for (let s2 = 0; s2 * 2 <= s; s2++) {
+          for (let s1 = 0; s1 <= s; s1++) {
+            if (s1 + s2 + s5 == 20) {
+              document.write(s5 + "," + s2 + "," + s1 + "<br>");
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

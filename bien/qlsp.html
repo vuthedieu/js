@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button onclick="list()">list</button>
+    <button onclick="add()">add</button>
+
+    <div id="disp"></div>
+
+    <script>
+      let listProduct = ["Ip15", "S23", "Note 9"];
+      list();
+
+      function list() {
+        let str = "<h1>Danh sách sản phẩm</h1>";
+        str += `  <p>Số lượng sản phẩm: ${listProduct.length}</p>`;
+        for (let i = 0; i < listProduct.length; i++) {
+          str += `<h3>${listProduct[i]}<button onclick="edit(${i})">edit</button></h3><button onclick="xoa(${i})">xoa</button></h3>`;
+        }
+        document.getElementById("disp").innerHTML = str;
+      }
+
+      function add() {
+        let str = '<input id="inp"> <buttonm onclick="them()">add</button>';
+        document.getElementById("disp").innerHTML = str;
+      }
+
+      function them() {
+        listProduct.push(document.getElementById("inp").value);
+        list();
+      }
+
+      function edit(index) {
+        let str = ` <input id = "inp" value = "${listProduct[index]}"> <buttonm onclick ="save(${index})"> save </button>`;
+        document.getElementById("disp").innerHTML = str;
+      }
+
+      function save(index) {
+        listProduct[index] = document.getElementById("inp").value;
+        list();
+      }
+
+      function xoa(index) {
+        let str = ` <input id = "inp" value="${listProduct[index]}"> <buttonm onclick ="savexoa(${index})"> save </button>`;
+        document.getElementById("disp").innerHTML = str;
+      }
+
+      function savexoa(index) {
+        listProduct.slice(document.getElementById("inp").value, 1);
+        list();
+      }
+    </script>
+  </body>
+</html>

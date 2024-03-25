@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      //   let n = +prompt("Enter a number");
+      let arr = [1, 5, 3, 7, 10, 1];
+      //   let check = "arr chuas toan bo cac so tu 1 den n";
+      //   for (i = 0; i < +n; i++) {
+      //     if (arr.indexOf(i) == -1) {
+      //       let check = "arr k chuas toan bo cac so tu 1 den n";
+      //       break;
+      //     }
+
+      //   }
+      //   document.write(check);
+      // tìm cặp có tihs lớn nhất trong nhất
+      let max = arr[0] * arr[1];
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+          if (max < arr[i] * arr[j] && i != j) {
+            mma = arr[i] * aar[j];
+          }
+        }
+      }
+      document.writeln(max);
+    </script>
+  </body>
+</html>

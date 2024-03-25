@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <img
+      id="x"
+      src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/mot-chiec-hinh-nen-vua-dang-yeu-vua-huyen-ao-cho-ban-nu.jpg"
+      alt=""
+      style="
+        position: absolute;
+        width: 100px;
+        top: 0px;
+        left: 0px;
+        height: 100px;
+      "
+    />
+    <script>
+      let sp = Math.floor(Math.random() * (1 - -1 + 1)) - 1;
+      let s = Math.floor(Math.random() * (1 - -1 + 1)) - 1;
+      setInterval(() => {
+        let xx = document.getElementById("x");
+        xx.style.left = parseInt(xx.style.left) + sp + "px";
+        xx.style.top = parseInt(xx.style.top) + s + "px";
+        if (
+          parseInt(xx.style.left) >= window.innerWidth - 100 ||
+          parseInt(xx.style.left) <= 0
+        )
+          sp = Math.floor(Math.random() * (1 - -1 + 1)) - 1;
+
+        if (
+          parseInt(xx.style.top) >= window.innerHeight - 100 ||
+          parseInt(xx.style.top) <= 0
+        ) {
+          s = Math.floor(Math.random() * (1 - -1 + 1)) - 1;
+        }
+        // else {
+        //     sp = Math.floor(Math.random() * 1);
+        //     s = Math.floor(Math.random() * 1);
+        // }
+      }, 2);
+      //   window.addEventListener("keydown", (e) => {
+      //     if (e.key == "f") {
+      //       sp = -1;
+      //       s = 0;
+      //     }
+      //     if (e.key == "f") {
+      //       sp = 1;
+      //       s = 0;
+      //     }
+      //     if (e.key == "f") {
+      //       sp = 0;
+      //       s = 1;
+      //     }
+      //     if (e.key == "f") {
+      //       sp = 0;
+      //       s = -1;
+      //     }
+      //   });
+    </script>
+  </body>
+</html>

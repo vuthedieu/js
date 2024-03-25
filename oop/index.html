@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      //     let a={
+      //         name: "dieu",
+      //         age:22,
+      //         ispoor:true,
+      //         adress:"nam dinh"
+      //     }
+      //    let list=[
+      //     {
+      //         name:'ip',
+      //         print:200
+      //     },{
+      //          name:'ip1',
+      //         print:201
+      //     }
+      //    ];
+      //tao 2 ddooi tuong ten a b diem 8 10 xep hang kha gioi
+      //   let list = [
+      //     {
+      //       name: "a",
+      //       diem: 8,
+      //       hang: kha,
+      //     },
+      //     {
+      //       name: "b",
+      //       diem: 10,
+      //       hang: gioi,
+      //       f1: function () {
+      //         alert(this.name);
+      //       },
+      //     },
+      //   ];
+      class student {
+        constructor(name, age, score) {
+          this.name = name;
+          this.age = age;
+          this.score = score;
+        }
+        f2() {
+          alert(this.name + "," + this.age + "," + this.score);
+        }
+      }
+      let s1 = new student("dieu", 22, 10);
+      s1.f2();
+    </script>
+  </body>
+</html>

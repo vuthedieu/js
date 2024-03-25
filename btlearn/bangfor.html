@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- let sout; sout = "
+    <table border="1" width="300" cellspacing="0" cellpadding="3">
+      " for (i = 1; i <=1 0; i++) { sout=s out + "
+      <tr>
+        "; for (j=1 ; j <=1 0; j++) { sout=s out + "
+        <td>" + i * j + "</td>
+        "; } sout=s out + "
+      </tr>
+      "; } sout=s out + "
+    </table>
+    "; document.write(sout); -->
+    <script language="javascript">
+      let sout, i, j;
+      sout = "<table border='1' width='300' cellspacing='0' cellpadding='3'>";
+      i = j = 1;
+      while (i <= 10) {
+        sout = sout + "<tr>";
+        while (j <= 10) {
+          sout = sout + "<td>" + i * j + "</td>";
+          j++;
+        }
+        sout = sout + "</tr>";
+        j = 1;
+        i++;
+      }
+      sout = sout + "</table>";
+      document.write(sout);
+    </script>
+  </body>
+</html>
