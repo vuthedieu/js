@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function generateFibonacci(n) {
+        var fibonacciSequence = [];
+
+        if (n === 1) {
+          fibonacciSequence.push(0);
+        } else if (n >= 2) {
+          fibonacciSequence.push(0, 1);
+
+          for (var i = 2; i < n; i++) {
+            var nextFibonacciNumber =
+              fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
+            fibonacciSequence.push(nextFibonacciNumber);
+          }
+        }
+
+        return fibonacciSequence;
+      }
+
+      var n = 10; // Số phần tử của dãy Fibonacci cần tạo
+      var fibonacciSequence = generateFibonacci(n);
+      console.log(
+        "Dãy Fibonacci gồm " + n + " số là: " + fibonacciSequence.join(", ")
+      );
+    </script>
+  </body>
+</html>
