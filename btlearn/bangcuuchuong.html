@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bảng cửu chương</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table id="multiplicationTable">
+      <caption>
+        Bảng cửu chương
+      </caption>
+    </table>
+
+    <script>
+      // Tạo một bảng cửu chương 10x10 và chèn vào trang web
+      var table = document.getElementById("multiplicationTable");
+
+      for (var i = 1; i <= 10; i++) {
+        var row = table.insertRow();
+
+        for (var j = 1; j <= 10; j++) {
+          var cell = row.insertCell();
+          cell.textContent = i + " x " + j + " = " + i * j;
+        }
+      }
+    </script>
+  </body>
+</html>
