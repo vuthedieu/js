@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function isPrime(number) {
+        if (number <= 1) {
+          return false;
+        }
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      // Hàm hiển thị các số nguyên tố đầu tiên
+      function displayFirstPrimes(count) {
+        var primes = [];
+        var num = 2; // Bắt đầu kiểm tra từ số 2, số nguyên tố đầu tiên
+
+        while (primes.length < count) {
+          if (isPrime(num)) {
+            primes.push(num);
+          }
+          num++;
+        }
+
+        console.log("Các số nguyên tố đầu tiên là:");
+        console.log(primes.join(", "));
+      }
+
+      // Hiển thị 10 số nguyên tố đầu tiên
+      displayFirstPrimes(10);
+    </script>
+  </body>
+</html>
