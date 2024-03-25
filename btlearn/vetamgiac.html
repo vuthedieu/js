@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vẽ tam giác bằng JavaScript</title>
+  </head>
+
+  <body>
+    <script>
+      // Số dòng của tam giác
+      var rows = 5;
+
+      // Vẽ tam giác
+      for (var i = 1; i <= rows; i++) {
+        var str = "";
+        // Tạo các dấu sao cho mỗi dòng
+        for (var j = 1; j <= i; j++) {
+          str += "* ";
+        }
+        document.write(str + "<br/>");
+      }
+      for (var i = rows; i >= 1; i--) {
+        var str = "";
+        // Tạo các dấu sao cho mỗi dòng
+        for (var j = 1; j <= i; j++) {
+          str += "* ";
+        }
+        document.write(str + "<br/>");
+      }
+    </script>
+  </body>
+</html>
