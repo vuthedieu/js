@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <canvas id="myCanvas"></canvas>
+
+  <body>
+    <script>
+      class Rectangle {
+        constructor(x, y, width, height, color) {
+          this.x = x;
+          this.y = y;
+          this.width = width;
+          this.height = height;
+          this.color = color;
+        }
+
+        render(canvas) {
+          if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+          } else {
+            console.error("Canvas is not supported!");
+          }
+        }
+      }
+      var rectangle = new Rectangle(50, 50, 100, 80, "#FF0000");
+      var canvas = document.getElementById("myCanvas");
+      rectangle.render(canvas);
+    </script>
+  </body>
+</html>

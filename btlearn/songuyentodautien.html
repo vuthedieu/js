@@ -9,35 +9,35 @@
   <body>
     <script>
       function isPrime(number) {
-        if (number <= 1) {
-          return false;
-        }
-        for (var i = 2; i <= Math.sqrt(number); i++) {
-          if (number % i === 0) {
-            return false;
+          if (number <= 1) {
+              return false;
           }
-        }
-        return true;
-      }
-
-      // Hàm hiển thị các số nguyên tố đầu tiên
-      function displayFirstPrimes(count) {
-        var primes = [];
-        var num = 2; // Bắt đầu kiểm tra từ số 2, số nguyên tố đầu tiên
-
-        while (primes.length < count) {
-          if (isPrime(num)) {
-            primes.push(num);
+          for (var i = 2; i <= Math.sqrt(number); i++) {
+              if (number % i === 0) {
+                  return false;
+              }
           }
-          num++;
-        }
+          return true;
+          r
 
-        console.log("Các số nguyên tố đầu tiên là:");
-        console.log(primes.join(", "));
-      }
+          // Hàm hiển thị các số nguyên tố đầu tiên
+          function displayFirstPrimes(count) {
+              var primes = [];
+              var num = 2; // Bắt đầu kiểm tra từ số 2, số nguyên tố đầu tiên
 
-      // Hiển thị 10 số nguyên tố đầu tiên
-      displayFirstPrimes(10);
+              while (primes.length < count) {
+                  if (isPrime(num)) {
+                      primes.push(num);
+                  }
+                  num++;
+              }
+
+              console.log("Các số nguyên tố đầu tiên là:");
+              console.log(primes.join(", "));
+          }
+
+          // Hiển thị 10 số nguyên tố đầu tiên
+          displayFirstPrimes(10);
     </script>
   </body>
 </html>

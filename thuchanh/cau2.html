@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function insertNumberToArray(array, x, index) {
+        if (index < 0 || index > array.length) {
+          return array;
+        }
+
+        var newArray = [];
+        for (var i = 0; i < array.length; i++) {
+          if (i === index) {
+            newArray.push(x);
+          }
+          newArray.push(array[i]);
+        }
+
+        if (index === array.length) {
+          newArray.push(x);
+        }
+
+        return newArray;
+      }
+
+      var array = [1, 2, 3, 4, 5];
+      var x = 10;
+      var index = 2;
+      var newArray = insertNumberToArray(array, x, index);
+      console.log(
+        "Mảng mới sau khi chèn số",
+        x,
+        "vào vị trí",
+        index,
+        "là:",
+        newArray
+      );
+    </script>
+  </body>
+</html>

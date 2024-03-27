@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function findAvg(scores) {
+        if (scores.length === 0) {
+          return 0;
+        }
+
+        var sum = 0;
+        for (var i = 0; i < scores.length; i++) {
+          sum += scores[i];
+        }
+
+        var avg = sum / scores.length;
+        return avg;
+      }
+
+      //
+      var scores = [85, 90, 75, 95, 88];
+      var averageScore = findAvg(scores);
+      console.log("Điểm trung bình của danh sách điểm thi là:", averageScore);
+    </script>
+  </body>
+</html>

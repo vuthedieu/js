@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      const lunisolar = require("lunisolar");
+
+      // Các mảng lưu trữ thông tin về can và chi
+      const can = [
+        "Giáp",
+        "Ất",
+        "Bính",
+        "Đinh",
+        "Mậu",
+        "Kỷ",
+        "Canh",
+        "Tân",
+        "Nhâm",
+        "Quý",
+      ];
+      const chi = [
+        "Tí",
+        "Sửu",
+        "Dần",
+        "Mão",
+        "Thìn",
+        "Tị",
+        "Ngọ",
+        "Mùi",
+        "Thân",
+        "Dậu",
+        "Tuất",
+        "Hợi",
+      ];
+
+      // Hàm chuyển đổi từ dương lịch sang âm lịch và can chi
+      function duongLichToAmLichWithCanChi(duongLichDate) {
+        const date = new Date(duongLichDate);
+        const lunarDate = lunisolar.toLunar(date);
+        const amLichYear = lunarDate.year;
+        const canIndex = (amLichYear - 4) % 10; // Tính can
+        const chiIndex = lunarDate.zodiacIndex; // Tính chi
+        const canChiYear = can[canIndex] + " " + chi[chiIndex];
+        return {
+          year: amLichYear,
+          canChiYear: canChiYear,
+        };
+      }
+
+      // Sử dụng hàm chuyển đổi
+      const duongLichDate = new Date("2024-03-27"); // Thay đổi ngày cần chuyển đổi tại đây
+      const amLichInfo = duongLichToAmLichWithCanChi(duongLichDate);
+      console.log("Năm âm lịch tương ứng là: " + amLichInfo.year);
+      console.log("Năm âm lịch với can chi là: " + amLichInfo.canChiYear);
+    </script>
+  </body>
+</html>

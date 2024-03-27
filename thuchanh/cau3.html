@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function isPrime(num) {
+        if (num <= 1) {
+          return false;
+        }
+        for (var i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function sumOfListPrime(x) {
+        var sum = 0;
+        for (var i = 2; i <= x; i++) {
+          if (isPrime(i)) {
+            sum += i;
+          }
+        }
+        return sum;
+      }
+
+      // Ví dụ sử dụng hàm
+      var x = 10;
+      var sum = sumOfListPrime(x);
+      console.log("Tổng các số nguyên tố từ 0 đến", x, "là:", sum);
+    </script>
+  </body>
+</html>
