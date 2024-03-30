@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // Lớp mô tả đối tượng Remote
+      class Remote {
+        constructor(code) {
+          this.code = code;
+        }
+
+        // Điều khiển chuyển kênh
+        changeChannel(tv, channel) {
+          tv.channel = channel;
+          console.log(`Đã chuyển đến kênh ${channel}`);
+        }
+
+        // Điều khiển âm lượng
+        changeVolume(tv, volume) {
+          tv.volume = volume;
+          console.log(`Đã thay đổi âm lượng thành ${volume}`);
+        }
+
+        // Bật tivi
+        turnOn(tv) {
+          tv.isOn = true;
+          console.log("Tivi đã được bật");
+        }
+
+        // Tắt tivi
+        turnOff(tv) {
+          tv.isOn = false;
+          console.log("Tivi đã được tắt");
+        }
+      }
+
+      // Lớp mô tả đối tượng TiVi
+      class TiVi {
+        constructor(channel, volume, isOn = false) {
+          this.channel = channel;
+          this.volume = volume;
+          this.isOn = isOn;
+        }
+
+        // Điều khiển chuyển kênh
+        changeChannel(channel) {
+          this.channel = channel;
+          console.log(`Đã chuyển đến kênh ${channel}`);
+        }
+
+        // Điều khiển âm lượng
+        changeVolume(volume) {
+          this.volume = volume;
+          console.log(`Đã thay đổi âm lượng thành ${volume}`);
+        }
+      }
+
+      // Khởi tạo một chiếc Tivi và Remote
+      const tivi = new TiVi(1, 10);
+      const remote = new Remote("1234");
+
+      // Bật tivi
+      remote.turnOn(tivi);
+
+      // Chuyển đến kênh 7
+      tivi.changeChannel(7);
+
+      // Sử dụng remote chuyển đến kênh 3
+      remote.changeChannel(tivi, 3);
+
+      // Tăng âm lượng lên 2 đơn vị
+      remote.changeVolume(tivi, tivi.volume + 2);
+
+      // Sử dụng remote tắt tivi
+      remote.turnOff(tivi);
+    </script>
+  </body>
+</html>
