@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function getLunarYear(year) {
+        const can = [
+          "Giáp",
+          "Ất",
+          "Bính",
+          "Đinh",
+          "Mậu",
+          "Kỷ",
+          "Canh",
+          "Tân",
+          "Nhâm",
+          "Quý",
+        ];
+        const chi = [
+          "Tí",
+          "Sửu",
+          "Dần",
+          "Mão",
+          "Thìn",
+          "Tỵ",
+          "Ngọ",
+          "Mùi",
+          "Thân",
+          "Dậu",
+          "Tuất",
+          "Hợi",
+        ];
+
+        let canIndex = (year - 4) % 10; // Bắt đầu từ năm Giáp Tý (năm 4)
+        let chiIndex = (year - 4) % 12; // Bắt đầu từ năm Tý (năm 4)
+
+        return can[canIndex] + " " + chi[chiIndex];
+      }
+
+      // Ví dụ: Tính năm âm lịch cho năm 2023
+      let lunarYear = getLunarYear(2023);
+      console.log(lunarYear); // In ra "Ất Dậu"
+    </script>
+  </body>
+</html>
