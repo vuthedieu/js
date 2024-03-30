@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rectangle</title>
+  </head>
+
+  <body>
+    <canvas id="rectangleCanvas" width="200" height="200"></canvas>
+    <script>
+      class Rectangle {
+        constructor(length, width) {
+          this.length = length;
+          this.width = width;
+        }
+
+        // tính diện tích
+        calculateArea() {
+          return this.length * this.width;
+        }
+
+        // tính chu vi
+        calculatePerimeter() {
+          return 2 * (this.length + this.width);
+        }
+
+        // hiển thị hình chữ nhật trên canvas
+        drawRectangle() {
+          const canvas = document.getElementById("rectangleCanvas");
+          const ctx = canvas.getContext("2d");
+          ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
+          ctx.fillRect(0, 0, this.width, this.length); // draw rectangle
+        }
+      }
+
+      // Khởi tạo một đối tượng kiểu Rectangle
+      const rectangle = new Rectangle(100, 50);
+
+      // Hiển thị hình chữ nhật trên màn hình web
+      rectangle.drawRectangle();
+
+      // Thay đổi chiều dài và chiều rộng của hình chữ nhật
+      rectangle.length = 80;
+      rectangle.width = 120;
+
+      // Hiển thị hình chữ nhật mới
+      rectangle.drawRectangle();
+
+      // In ra màn hình diện tích và chu vi của hình chữ nhật
+      console.log("Diện tích:", rectangle.calculateArea());
+      console.log("Chu vi:", rectangle.calculatePerimeter());
+    </script>
+  </body>
+</html>
