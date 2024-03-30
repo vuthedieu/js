@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // Lớp đối tượng Bóng đèn
+      class LightBulb {
+        constructor() {
+          this.isOn = false;
+        }
+
+        turnOn() {
+          this.isOn = true;
+          console.log("Bóng đèn đã được bật.");
+        }
+
+        turnOff() {
+          this.isOn = false;
+          console.log("Bóng đèn đã được tắt.");
+        }
+
+        isOn() {
+          return this.isOn;
+        }
+      }
+
+      // Lớp đối tượng Công tắc
+      class Switch {
+        constructor(lightBulb) {
+          this.lightBulb = lightBulb;
+        }
+
+        toggle() {
+          if (this.lightBulb.isOn()) {
+            this.lightBulb.turnOff();
+          } else {
+            this.lightBulb.turnOn();
+          }
+        }
+      }
+
+      // Khởi tạo một bóng đèn và một công tắc
+      const lightBulb = new LightBulb();
+      const lightSwitch = new Switch(lightBulb);
+
+      // Bật tắt công tắc 10 lần
+      for (let i = 0; i < 10; i++) {
+        lightSwitch.toggle();
+        console.log(
+          "Trạng thái của bóng đèn: " + (lightBulb.isOn ? "Bật" : "Tắt")
+        );
+      }
+    </script>
+  </body>
+</html>
