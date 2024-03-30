@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // Lớp mô tả đối tượng chuột
+      class Rat {
+        constructor(name, weight, speed) {
+          this.name = name;
+          this.weight = weight;
+          this.speed = speed;
+          this.isAlive = true;
+        }
+
+        // Hành vi kêu của chuột
+        makeSound() {
+          console.log("Chít chít");
+        }
+      }
+
+      // Lớp mô tả đối tượng mèo
+      class Cat {
+        constructor(name, weight, maxSpeed) {
+          this.name = name;
+          this.weight = weight;
+          this.maxSpeed = maxSpeed;
+        }
+
+        // Hành vi kêu của mèo
+        makeSound() {
+          console.log("Meo meo");
+        }
+
+        // Hành vi bắt chuột
+        catchRat(rat) {
+          if (this.maxSpeed > rat.speed) {
+            console.log(`${this.name} đã bắt được chuột ${rat.name}`);
+            this.weight += rat.weight; // Tăng khối lượng của mèo khi ăn chuột
+            rat.isAlive = false; // Đặt trạng thái của chuột thành chết
+          } else {
+            console.log(
+              `${this.name} không thể bắt được chuột ${rat.name} vì tốc độ quá chậm`
+            );
+          }
+        }
+
+        // Hành vi ăn chuột
+        eatRat(rat) {
+          if (!rat.isAlive) {
+            console.log(`${this.name} đã ăn chuột ${rat.name}`);
+          } else {
+            console.log(
+              `${this.name} không thể ăn chuột ${rat.name} vì chuột vẫn còn sống`
+            );
+          }
+        }
+      }
+
+      // Khởi tạo một số đối tượng chuột và mèo
+      const rat1 = new Rat("Jerry", 0.5, 3);
+      const rat2 = new Rat("Mickey", 0.6, 4);
+      const cat = new Cat("Tom", 5, 6);
+
+      // Mô phỏng quá trình mèo bắt chuột và ăn chuột
+      cat.makeSound(); // Mèo kêu
+      rat1.makeSound(); // Chuột kêu
+
+      cat.catchRat(rat1); // Mèo bắt chuột
+      cat.catchRat(rat2); // Mèo không thể bắt chuột này vì tốc độ quá chậm
+
+      cat.eatRat(rat1); // Mèo ăn chuột
+      cat.eatRat(rat2); // Mèo không thể ăn chuột này vì chuột vẫn còn sống
+    </script>
+  </body>
+</html>
