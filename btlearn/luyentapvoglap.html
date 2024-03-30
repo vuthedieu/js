@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // Bài 1
+      console.log("Bài 1:");
+      for (let i = 1; i <= 100; i++) {
+        console.log(i);
+        if (i === 99) {
+          alert("Đã hoàn thành!");
+        }
+      }
+
+      // Bài 2
+      console.log("\nBài 2:");
+      let temperature;
+      do {
+        temperature = parseInt(prompt("Nhập nhiệt độ hiện tại:"));
+        if (temperature > 100) {
+          alert("Nhiệt độ quá cao, vui lòng giảm nhiệt độ.");
+        } else if (temperature < 20) {
+          alert("Nhiệt độ quá thấp, vui lòng tăng nhiệt độ.");
+        }
+      } while (temperature > 100 || temperature < 20);
+
+      // Bài 3
+      console.log("\nBài 3:");
+      let fib1 = 0,
+        fib2 = 1;
+      console.log(fib1);
+      console.log(fib2);
+      for (let i = 3; i <= 20; i++) {
+        let nextFib = fib1 + fib2;
+        console.log(nextFib);
+        fib1 = fib2;
+        fib2 = nextFib;
+      }
+
+      // Bài 4
+      console.log("\nBài 4:");
+      let fib3 = 0,
+        fib4 = 1;
+      while (true) {
+        let nextFib = fib3 + fib4;
+        if (nextFib % 5 === 0) {
+          console.log(nextFib);
+          break;
+        }
+        fib3 = fib4;
+        fib4 = nextFib;
+      }
+
+      // Bài 5
+      console.log("\nBài 5:");
+      let fib5 = 0,
+        fib6 = 1,
+        sumFibonacci = 1;
+      for (let i = 3; i <= 20; i++) {
+        let nextFib = fib5 + fib6;
+        sumFibonacci += nextFib;
+        fib5 = fib6;
+        fib6 = nextFib;
+      }
+      console.log("Tổng của 20 số đầu tiên trong dãy Fibonacci:", sumFibonacci);
+
+      // Bài 6
+      console.log("\nBài 6:");
+      let sum = 0,
+        count = 0,
+        num = 1;
+      while (count < 30) {
+        if (num % 7 === 0) {
+          sum += num;
+          count++;
+        }
+        num++;
+      }
+      console.log(
+        "Tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên:",
+        sum
+      );
+
+      // Bài 7
+      console.log("\nBài 7:");
+      for (let i = 1; i <= 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+          console.log("Fizz");
+        } else if (i % 5 === 0) {
+          console.log("Buzz");
+        } else {
+          console.log(i);
+        }
+      }
+    </script>
+  </body>
+</html>
