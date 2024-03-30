@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // Bài 1
+      function compareValues(value1, value2) {
+        if (value1 > value2) {
+          alert("Giá trị của tham số thứ nhất lớn hơn tham số thứ hai.");
+        } else {
+          return value1 + value2;
+        }
+      }
+
+      // Bài 2
+      const stars = [
+        "Polaris",
+        "Aldebaran",
+        "Deneb",
+        "Vega",
+        "Altair",
+        "Dubhe",
+        "Regulus",
+      ];
+      const constellations = [
+        "Ursa Minor",
+        "Tarurus",
+        "Cygnus",
+        "Lyra",
+        "Aquila",
+        "Ursa Major",
+        "Leo",
+      ];
+
+      function findConstellation(starName) {
+        for (let i = 0; i < stars.length; i++) {
+          if (stars[i] === starName) {
+            return constellations[i];
+          }
+        }
+        return "Không tìm thấy ngôi sao này trong danh sách.";
+      }
+
+      const starName = prompt("Nhập tên của ngôi sao:");
+      alert(findConstellation(starName));
+
+      // Bài 3
+      function square(number) {
+        return number * number;
+      }
+
+      console.log(square(5));
+
+      // Bài 4
+      function calculateArea(radius) {
+        return Math.PI * radius * radius;
+      }
+
+      function calculatePerimeter(radius) {
+        return 2 * Math.PI * radius;
+      }
+
+      console.log("Diện tích hình tròn:", calculateArea(5));
+      console.log("Chu vi hình tròn:", calculatePerimeter(5));
+
+      // Bài 5
+      function factorial(number) {
+        if (number === 0 || number === 1) {
+          return 1;
+        } else {
+          return number * factorial(number - 1);
+        }
+      }
+
+      console.log(factorial(5));
+
+      // Bài 6
+      function isDigit(character) {
+        return !isNaN(parseInt(character));
+      }
+
+      console.log(isDigit("5")); // true
+      console.log(isDigit("a")); // false
+
+      // Bài 7
+      function minNumber(number1, number2, number3) {
+        return Math.min(number1, number2, number3);
+      }
+
+      console.log(minNumber(3, 6, 1));
+
+      // Bài 8
+      function isPositiveInteger(number) {
+        return Number.isInteger(number) && number > 0;
+      }
+
+      console.log(isPositiveInteger(5)); // true
+      console.log(isPositiveInteger(-5)); // false
+
+      // Bài 9
+      function reverseArray(array) {
+        return array.reverse();
+      }
+
+      console.log(reverseArray([1, 2, 3, 4, 5]));
+
+      // Bài 10
+      function countOccurrences(array, character) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === character) {
+            count++;
+          }
+        }
+        return count === 0 ? -1 : count;
+      }
+
+      const characters = ["a", "b", "c", "a", "d", "e", "a"];
+      console.log(countOccurrences(characters, "a")); // 3
+      console.log(countOccurrences(characters, "z")); // -1
+    </script>
+  </body>
+</html>
