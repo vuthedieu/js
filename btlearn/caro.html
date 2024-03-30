@@ -1,0 +1,107 @@
+!
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caro Game</title>
+    <style>
+      #board {
+        display: grid;
+        grid-template-columns: repeat(20, 30px);
+        grid-template-rows: repeat(20, 30px);
+      }
+
+      .cell {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="board"></div>
+    <script>
+      const board = document.getElementById("board");
+      let currentPlayer = "X";
+      let gameEnded = false;
+
+      // Tạo bàn cờ
+      for (let i = 0; i < 20; i++) {
+        for (let j = 0; j < 20; j++) {
+          const cell = document.createElement("div");
+          cell.className = "cell";
+          cell.dataset.row = i;
+          cell.dataset.col = j;
+          cell.addEventListener("click", handleCellClick);
+          board.appendChild(cell);
+        }
+      }
+
+      // Xử lý khi click vào ô trống
+      function handleCellClick() {
+        if (gameEnded) return;
+        if (this.textContent === "") {
+          this.textContent = currentPlayer;
+          if (checkWin(this.dataset.row, this.dataset.col)) {
+            alert(currentPlayer + " thắng!");
+            gameEnded = true;
+          } else {
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+          }
+        }
+      }
+
+      // Kiểm tra xem người chơi hiện tại đã thắng chưa
+      function checkWin(row, col) {
+        const directions = [
+          [-1, 0],
+          [1, 0],
+          [0, -1],
+          [0, 1], // Kiểm tra hàng ngang và hàng dọc
+          [-1, -1],
+          [1, 1],
+          [-1, 1],
+          [1, -1], // Kiểm tra hai đường chéo
+        ];
+
+        for (const [dx, dy] of directions) {
+          let count = 1; // Đếm số ô liên tiếp có dấu của người chơi hiện tại
+          let i = parseInt(row) + dx;
+          let j = parseInt(col) + dy;
+          while (
+            i >= 0 &&
+            i < 20 &&
+            j >= 0 &&
+            j < 20 &&
+            board.querySelector(`[data-row="${i}"][data-col="${j}"]`)
+              .textContent === currentPlayer
+          ) {
+            count++;
+            i += dx;
+            j += dy;
+          }
+          i = parseInt(row) - dx;
+          j = parseInt(col) - dy;
+          while (
+            i >= 0 &&
+            i < 20 &&
+            j >= 0 &&
+            j < 20 &&
+            board.querySelector(`[data-row="${i}"][data-col="${j}"]`)
+              .textContent === currentPlayer
+          ) {
+            count++;
+            i -= dx;
+            j -= dy;
+          }
+          if (count >= 5) return true;
+        }
+
+        return false;
+      }
+    </script>
+  </body>
+</html>
