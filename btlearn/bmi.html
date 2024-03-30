@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function calculateBMI(weight, height) {
+        return weight / (height * height);
+      }
+
+      function classifyBMI(bmi) {
+        if (bmi < 16) {
+          return "Gầy độ III";
+        } else if (bmi < 17) {
+          return "Gầy độ II";
+        } else if (bmi < 18.5) {
+          return "Gầy độ I";
+        } else if (bmi < 25) {
+          return "Bình thường";
+        } else if (bmi < 30) {
+          return "Thừa cân";
+        } else if (bmi < 35) {
+          return "Béo phì độ I";
+        } else if (bmi < 40) {
+          return "Béo phì độ II";
+        } else {
+          return "Béo phì độ III";
+        }
+      }
+
+      // Ví dụ: Tính chỉ số BMI và phân loại cho một người có cân nặng 65Kg và chiều cao 1.75m
+      let weight = 65; // Đơn vị: kilogram
+      let height = 1.75; // Đơn vị: mét
+      let bmi = calculateBMI(weight, height);
+      let classification = classifyBMI(bmi);
+
+      console.log("Chỉ số BMI:", bmi.toFixed(2));
+      console.log("Phân loại:", classification);
+    </script>
+  </body>
+</html>
