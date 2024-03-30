@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function isPalindrome(s) {
+        // Chuyển đổi chuỗi thành chữ thường và loại bỏ các ký tự không phải là chữ cái
+        s = s.toLowerCase().replace(/[^a-z]/g, "");
+
+        // Kiểm tra điều kiện dừng của đệ quy
+        if (s.length <= 1) {
+          return true; // Chuỗi có độ dài 0 hoặc 1 là chuỗi đối xứng
+        }
+
+        // So sánh ký tự đầu và ký tự cuối của chuỗi
+        if (s[0] === s[s.length - 1]) {
+          // Nếu giống nhau, tiếp tục kiểm tra phần chuỗi con bên trong
+          return isPalindrome(s.slice(1, s.length - 1));
+        } else {
+          return false; // Nếu không giống nhau, không phải là chuỗi đối xứng
+        }
+      }
+
+      // Kiểm tra chuỗi đối xứng
+      console.log(isPalindrome("racecar")); // true
+      console.log(isPalindrome("level")); // true
+      console.log(isPalindrome("hello")); // false
+    </script>
+  </body>
+</html>
