@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // Lớp mô tả đối tượng quả táo
+      class Apple {
+        constructor() {
+          this.weight = 10; // Khối lượng mặc định của quả táo là 10 đơn vị
+        }
+      }
+
+      // Lớp mô tả đối tượng người
+      class Human {
+        constructor(name, gender, weight) {
+          this.name = name;
+          this.gender = gender;
+          this.weight = weight;
+        }
+
+        // Phương thức để nói
+        speak(words) {
+          console.log(`${this.name} says: ${words}`);
+        }
+
+        // Phương thức ăn táo
+        eat(apple) {
+          if (apple.weight > 0) {
+            console.log(`${this.name} is eating an apple.`);
+            this.weight++; // Tăng cân nặng của người
+            apple.weight--; // Giảm khối lượng của quả táo
+          } else {
+            console.log("No apple left to eat!");
+          }
+        }
+
+        // Phương thức kiểm tra khối lượng của quả táo
+        checkAppleWeight(apple) {
+          console.log(`The weight of the apple is ${apple.weight} units.`);
+        }
+      }
+
+      // Khởi tạo Adam và Eva
+      const adam = new Human("Adam", "Male", 70);
+      const eva = new Human("Eva", "Female", 60);
+
+      // Khởi tạo quả táo
+      const apple = new Apple();
+
+      // Adam và Eva ăn táo cho đến khi hết
+      while (apple.weight > 0) {
+        adam.eat(apple);
+        eva.eat(apple);
+      }
+
+      // Hiển thị cân nặng của Adam và Eva sau khi ăn hết táo
+      console.log(`${adam.name}'s weight: ${adam.weight} kg`);
+      console.log(`${eva.name}'s weight: ${eva.weight} kg`);
+    </script>
+  </body>
+</html>
