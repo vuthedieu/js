@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // Chuyển đổi từ feet sang meters
+      function footToMeter(foot) {
+        return 0.305 * foot;
+      }
+
+      // Chuyển đổi từ meters sang feet
+      function meterToFoot(meter) {
+        return 3.279 * meter;
+      }
+
+      // Kiểm tra tính chính xác của các hàm
+      const testValues = [1, 5, 10, 20, 50];
+      testValues.forEach((value) => {
+        const meterValue = footToMeter(value);
+        const footValue = meterToFoot(meterValue);
+        console.log(`${value} feet = ${meterValue} meters`);
+        console.log(`${meterValue} meters = ${footValue} feet`);
+      });
+    </script>
+  </body>
+</html>
