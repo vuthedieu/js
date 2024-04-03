@@ -1,86 +1,30 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beer Catch Game</title>
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-        background-color: #f3f3f3;
-      }
+    <link rel="stylesheet" href="hungbia.css" />
+</head>
 
-      #catcher {
-        position: absolute;
-        bottom: 10px;
-        left: calc(50% - 50px);
-        width: 100px;
-        height: 20px;
-        background-color: #333;
-        border-radius: 5px;
-      }
-
-      .beer {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background-color: #ffaa00;
-        border-radius: 50%;
-      }
-    </style>
-  </head>
-
-  <body>
+<body>
+    <div id="startScreen">
+        <h1>Welcome to Beer Catch Game</h1>
+        <p>Choose difficulty</p>
+        <div class="cards">
+            <button class="card" onclick="startGame(2000)">Easy</button>
+            <button class="card" onclick="startGame(1500)">Medium</button>
+            <button class="card" onclick="startGame(1000)">Hard</button>
+        </div>
+    </div>
     <div id="catcher"></div>
     <div id="score">Score: 0</div>
-    <script>
-      const catcher = document.getElementById("catcher");
-      const scoreDisplay = document.getElementById("score");
-      let score = 0;
-      let catcherX = window.innerWidth / 2 - 50;
+    <div id="gameOver" style="display: none">
+        <p id="finalScore"></p>
+        Game Over <button onclick="restartGame()">Restart</button>
+        <button onclick="exitGame()">Exit</button>
+    </div>
+    <script src="hungbia.js"></script>
+</body>
 
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "ArrowLeft" && catcherX > 0) {
-          catcherX -= 30;
-        } else if (
-          event.key === "ArrowRight" &&
-          catcherX < window.innerWidth - 100
-        ) {
-          catcherX += 30;
-        }
-        catcher.style.left = catcherX + "px";
-      });
-
-      function createBeer() {
-        const beer = document.createElement("div");
-        beer.classList.add("beer");
-        beer.style.left = Math.random() * (window.innerWidth - 20) + "px";
-        document.body.appendChild(beer);
-
-        const fallInterval = setInterval(function () {
-          const beerRect = beer.getBoundingClientRect();
-          const catcherRect = catcher.getBoundingClientRect();
-
-          if (
-            beerRect.bottom >= catcherRect.top &&
-            beerRect.right >= catcherRect.left &&
-            beerRect.left <= catcherRect.right
-          ) {
-            clearInterval(fallInterval);
-            beer.remove();
-            score++;
-            scoreDisplay.textContent = "Score: " + score;
-          } else if (beerRect.bottom >= window.innerHeight) {
-            clearInterval(fallInterval);
-            beer.remove();
-          } else {
-            beer.style.top = beer.offsetTop + 1 + "px";
-          }
-        }, 10);
-      }
-
-      setInterval(createBeer, 1000);
-    </script>
-  </body>
 </html>
