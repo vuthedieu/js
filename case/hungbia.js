@@ -11,6 +11,7 @@ let gameOver = false;
 
 function startGame(speed) {
     document.getElementById("startScreen").style.display = "none";
+    document.getElementById("score").style.display = "block";
     beerSpeed = speed;
     missed = 0;
     score = 0;
@@ -34,12 +35,12 @@ function exitGame() {
 document.addEventListener("keydown", function(event) {
     if (!gameOver) {
         if (event.key === "ArrowLeft" && catcherX > 0) {
-            catcherX -= 10;
+            catcherX -= 20;
         } else if (
             event.key === "ArrowRight" &&
             catcherX < window.innerWidth - 120
         ) {
-            catcherX += 10;
+            catcherX += 20;
         }
         catcher.style.left = catcherX + "px";
     }
